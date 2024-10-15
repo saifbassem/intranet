@@ -1,0 +1,125 @@
+{% extends 'base_nav.html' %}
+{% load static %}
+
+{% block page_title %}
+    {{questionnaire.name}}
+{% endblock page_title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'empower360/questionnaire.css' %}">
+
+{% endblock css %}
+
+{% block page_content %}
+
+<div class="container_grid">
+      <div class="section_questions">
+        <div class="top">
+
+        {% if questionnaire.questionlink_set.count > 0 %}
+
+         <h4 id="title">{{questionnaire.name}}</h4>
+         <p id="description">Please Answer the Following {{questionnaire.questionlink_set.count}} Questions.</p>
+
+            <div class="box_info">
+
+            </div>
+
+        <form id="survey-form" action="{% url 'empower360:submit' questionnaire.id %}" method="post">
+            {% csrf_token %}
+                {% for link in questionnaire.questionlink_set.all %}
+                    <div class="form-option">
+                        <h3 class="title">{{ link.question.title }}
+                             <span class="optional">{% if link.question.body %} {{ link.question.body }} {% endif %}</span>
+                        </h3>
+
+                         <h3 class="title ar">{{ link.question.title_ar }}
+                            <span class="optional">{% if link.question.body_ar %}{{ link.question.body_ar }} {% endif %}</span>
+                          </h3>
+
+                        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+                        {# Type 1 is free text#}
+                        {% if link.question.type == 1 %}
+                        <div class="form-option text_area">
+                            <!-- <input type="text" name="{{ link.id }}" id="answer{{ link.id }}" placeholder="Answer Goes Here *" required> -->
+
+                            <textarea cols="10" rows="10" name="{{ link.id }}" id="answer{{ link.id }}" placeholder="Answer Goes Here *" required></textarea>
+                        </div>
+                        {# The If Condition is left opened to make room for more types in the future#}
+                        {# Type 2 is Selection#}
+                        {% elif link.question.type == 2 %}
+
+                            <div class="all_option first">
+                            {% for choice in link.question.choice_set.all %}
+                                <div class="form-radio-option">
+                                    <input type="radio" id="{{choice.id}}" name="{{ link.id }}" value="{{choice.score}}" required>
+                                    <label for="{{choice.id}}">
+                                        <span class="material-icons icon_checked">radio_button_unchecked</span>
+                                         <span class="material-icons icon_unchecked">radio_button_checked</span>
+                                        {{choice.text}}
+                                    </label>
+
+                                </div>
+                            {% endfor %}
+                            </div>
+
+                        {% elif link.question.type == 3 %}
+
+                          <div class="all_option">
+                            <div class="form-radio-option">
+                                    <input type="radio" id="answer1-{{ link.id }}" name="{{ link.id }}" value="1" required>
+                                    <label class="answer" for="answer1-{{ link.id }}">
+                                      <img src="{% static 'empower360/face_angry.png' %}" alt="">
+                                        <span class="material-icons icon_check">check</span>
+                                    </label>
+                            </div>
+
+
+                            <div class="form-radio-option">
+                                    <input type="radio" id="answer2-{{ link.id }}" name="{{ link.id }}" value="2" required>
+                                    <label class="answer" for="answer2-{{ link.id }}">
+                                      <img src="{% static 'empower360/face.png' %}" alt="">
+                                        <span class="material-icons icon_check">check</span>
+                                    </label>
+                            </div>
+
+
+                            <div class="form-radio-option">
+                                    <input type="radio" id="answer3-{{ link.id }}" name="{{ link.id }}" value="3" required>
+                                    <label class="answer" for="answer3-{{ link.id }}">
+                                      <img src="{% static 'empower360/face_smile.png' %}" alt="">
+                                        <span class="material-icons icon_check">check</span>
+                                    </label>
+                            </div>
+                          </div>
+
+                        {% else %}
+                        <p>Question Type is Unknown</p>
+                        {% endif %}
+                    </div>
+                    <!-- <label for="choice{{ link.question.id }}">{{ choice.choice_text }}</label><br> -->
+                {% endfor %}
+
+                <div class="form-option button">
+                    <input type="submit" value="Submit" id="submit" class="submit">
+                </div>
+        </form>
+
+    {% else %}
+            <h1 id="title">{{questionnaire.name}}</h1>
+            <p id="description">No Questions available.</p>
+
+    {% endif %}
+        </div>
+      </div>
+</div>
+
+
+
+{% endblock page_content %}
+
+
+
+
+

@@ -1,0 +1,138 @@
+// /* helpers */
+@supports (-ms-ime-align:auto) {
+  .comparison-table{
+    p{
+      line-break: anywhere;
+    }
+  }
+}
+@supports (-ms-ime-align:auto) {
+  // .selector {
+  //     property: value;
+  // }
+}
+* {
+  box-sizing: border-box;
+  // max-width: 100%;
+  outline: none;
+}
+
+
+body,
+html {
+  color: black;
+  font: 400 16px/1 "Montserrat", sans-serif;
+  font-size: 16px;
+  height: 100%;
+  position: relative;
+  // background: #e9e9e9;
+  .ng-star-inserted {
+    display: none !important;
+  }
+}
+
+body {
+  direction: ltr;
+  font-family: "Lato", sans-serif;
+ &::after{
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    z-index: -1;
+ }
+}
+.site-main {
+  margin: 0 !important;
+}
+
+body {
+  ul,
+  ol {
+    margin: 0;
+  }
+  input,
+  input[type="text"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="number"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  button,
+  select,
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    color: black;
+  }
+
+
+.grid{
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+ 
+}
+
+.tbl {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.tcl {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+img {
+  max-width: 100%;
+}
+a{
+  text-decoration: unset;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  &.overlay_visible {
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+  }
+}

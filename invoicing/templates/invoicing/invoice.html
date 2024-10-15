@@ -1,0 +1,109 @@
+{% extends 'base_nav.html' %}
+{% load static %}
+
+{% block page_title %}
+    Invoice #{{ invoice.id }}
+{% endblock page_title %}
+
+{% block css %}
+<link href="{% static 'table.css' %}" rel="stylesheet">
+<style>
+
+
+.do-print{
+    display:none;
+}
+@media print{
+    .no-print{
+        display: none;
+        visibility: hidden;
+    }
+     .do-print{
+        display:block;
+        visibility: visible;
+    }
+}
+
+body::after{
+background:white;
+  background-image: none;
+}
+</style>
+{% endblock css %}
+
+
+{% block page_content %}
+
+<div class="no-print">
+    <a href="{% url 'invoicing:index'%}">Back</a>
+    <br>
+    <span>Download as:</span>
+    <a href="#" onClick="(function(){
+        window.print();
+        return false;
+    })();return false;">PDF</a>
+    <a href="{% url 'invoicing:invoice_download' invoice.id%}">Excel</a>
+    <br><br>
+</div>
+<div class="do-print" style="width:100%;text-align:center; margin-top:-130px;margin-bottom:-20px">
+    <img src="{% static 'logo_alt.png' %}" width="250px">
+</div>
+<h3>Invoice #{{ invoice.id }}</h3>
+<h5 class="no-print">Increase% {{invoice.increase}}</h5>
+<h5 class="no-print">Discount% {{invoice.discount}}</h5>
+<h5 class="no-print">USD Rate: {{invoice.usd}}</h5>
+<h5>Product Count: {{ invoice.invoicedetail_set.count }}</h5>
+<h5>Total Quantity: {{ quantity }}</h5>
+<h5>Invoice Total: USD {{invoice.total}}</h5>
+<br><br>
+
+{% if invoice.invoicedetail_set.count > 0 %}
+    <table>
+        <tr>
+            <th>SKU</th>
+            <th>Description</th>
+            <th>SubDesc.</th>
+            <th>Color</th>
+            <th>Size</th>
+            <th>Qty</th>
+            <th class="no-print">U. Price</th>
+            <th class="no-print">Calc. Price</th>
+            <th>USD U.Price</th>
+            <th>USD Total</th>
+        </tr>
+
+        {% for detail in invoice.invoicedetail_set.all %}
+            <tr>
+                <td>{{detail.item.itemlookupcode}}</td>
+                <td>{{detail.item.description}}</td>
+                <td>{{detail.item.subdescription}}</td>
+                <td>{{detail.item.color}}</td>
+                <td>{{detail.item.size}}</td>
+                <td>{{detail.quantity}}</td>
+                <td class="no-print">{{detail.unit_price}}</td>
+                <td class="no-print">{{detail.calculated_price}}</td>
+                <td>{{detail.usd_price}}</td>
+                <td>{{detail.total_price}}</td>
+            </tr>
+          {% endfor %}
+
+    </table>
+
+{% else %}
+
+    <p id="description">No Lines available.</p>
+
+{% endif %}
+
+<br><br>
+            <div class ="footer do-print" style="text-align:left">
+                <hr style="border-width: 1px;height: 3px;border: none;border-radius: 6px;background:#d9007d">
+                <h5>Carina Wear</h5>
+                <h5>Tel: 02 2616 1413/5/6/21</h5>
+                <h5>Address: Villa no. 37 1st district, Akhnaton school st.Fifth Settlement</h5>
+                <h6>carinawear.com</h6>
+            </div>
+
+
+{% endblock page_content %}
+

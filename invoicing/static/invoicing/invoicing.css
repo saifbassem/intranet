@@ -1,0 +1,82 @@
+.container {
+  width: 70%;
+  margin: 25px auto;
+}
+
+.container header {
+  text-align: center;
+  padding: 10px;
+  color: var(--white-color);
+  margin-bottom: 25px;
+}
+.container header h1 {
+  margin-bottom: 10px;
+}
+.container .cover {
+  padding: 30px;
+  background: var(--white-color);
+  border-radius: 6px;
+}
+.form-option p {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 18px;
+  font-family: inherit;
+  -webkit-accent-color: var(--pink-color);
+  -moz-accent-color: var(--pink-color);
+  accent-color: var(--pink-color);
+  margin-bottom:20px
+}
+select option {
+  text-transform: capitalize;
+}
+textarea {
+  resize: vertical;
+  height: 180px;
+}
+.form-radio-option {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.form-radio-option label,
+.form-checkbox-option label {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 500;
+}
+.form-radio-option input,
+.form-checkbox-option input {
+  display: inline-block;
+  margin-right: 5px;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+@media (max-width: 991px) {
+  .container {
+    width: 88%;
+  }
+}
+@media (max-width: 667px) {
+  .container {
+    width: 100%;
+  }
+  .container header h1 {
+    font-size: 26px;
+  }
+  .container form, .cover {
+    padding: 15px;
+  }
+}

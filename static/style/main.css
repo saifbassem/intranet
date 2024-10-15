@@ -1,0 +1,1085 @@
+html, body, iframe, header, footer, main, aside, nav, section, article, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, hr, blockquote, pre, figure, figcaption, a, address, del, em, i, img, strong, sub, sup, table, thead, tbody, tfoot, tr, th, td, form, fieldset, legend, label, input, select, textarea, button {
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: none;
+  font-size: 100%;
+  font: inherit;
+}
+
+html, body, iframe, header, footer, main, aside, nav, section, article, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ul, ol, li, hr, blockqoute, pre, figure, figcaption, form, fieldset, legend, label, input, select, textarea, button {
+  display: block;
+}
+
+html, body {
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+dl, dt, dd, ul, ol, li {
+  list-style: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+u, ins, del {
+  text-decoration: none;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: none;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  height: auto;
+}
+
+input[type=number] {
+  -moz-appearance: textfield !important;
+}
+
+@supports (-ms-ime-align: auto) {
+  .comparison-table p {
+    line-break: anywhere;
+  }
+}
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body,
+html {
+  color: black;
+  font: 400 16px/1 "Montserrat", sans-serif;
+  font-size: 16px;
+  height: 100%;
+  position: relative;
+}
+body .ng-star-inserted,
+html .ng-star-inserted {
+  display: none !important;
+}
+
+body {
+  direction: ltr;
+  font-family: "Lato", sans-serif;
+}
+body::after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+.site-main {
+  margin: 0 !important;
+}
+
+body ul,
+body ol {
+  margin: 0;
+}
+body input,
+body input[type=text],
+body input[type=button],
+body input[type=submit],
+body input[type=number],
+body input[type=email],
+body input[type=tel],
+body input[type=url],
+body input[type=password],
+body input[type=search],
+body button,
+body select,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  margin: 0;
+  color: black;
+}
+body .grid {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.tbl {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.tcl {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: unset;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.overlay.overlay_visible {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+}
+
+header {
+  background: #d9027d;
+  padding: 30px 20px;
+  position: relative;
+  z-index: 99;
+}
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+}
+header .navbar .container-header {
+  display: flex;
+  align-items: center;
+}
+header .navbar .container-header .navbar-brand {
+  max-width: 200px;
+}
+header .navbar .container-header .list_nav {
+  padding-left: 35px;
+}
+header .navbar .container-header .list_nav .navbar-nav {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+}
+header .navbar .container-header .list_nav .navbar-nav .nav-item .nav-link {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+header .navbar .container-header .list_nav .navbar-nav .nav-item .nav-link::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  bottom: -5px;
+  transition: all 0.5s ease;
+}
+header .navbar .container-header .list_nav .navbar-nav .nav-item .nav-link:hover::before {
+  width: 100%;
+}
+header .navbar .container-header .list_nav .navbar-nav .nav-item .nav-link.active::before {
+  width: 100%;
+}
+header .navbar .logout {
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+header .navbar .logout:hover {
+  background: #ffffff;
+  color: #d9027d;
+}
+
+.empower.container_grid {
+  position: relative;
+  z-index: 99;
+}
+.empower.container_grid .section_container .top {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 0px 10px 14px 10px rgba(0, 0, 0, 0.1019607843);
+  background: white;
+  border-radius: 20px;
+  position: relative;
+}
+.empower.container_grid .section_container .top h3 {
+  font-size: 30px;
+  font-weight: 600;
+  padding-bottom: 12px;
+  text-align: center;
+  color: black;
+}
+.empower.container_grid .section_container .top h4 {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  color: black;
+}
+.empower.container_grid .section_container .top h5 {
+  font-size: 16px;
+  color: #6e6e6e;
+  text-align: center;
+  color: black;
+}
+.empower.container_grid .section_container .top ul {
+  padding-top: 30px;
+}
+.empower.container_grid .section_container .top ul li {
+  padding-left: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.empower.container_grid .section_container .top ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.empower.container_grid .section_container .top ul li a .name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #d9027d;
+}
+.empower.container_grid .section_container .top ul li a:hover .name {
+  text-decoration: underline;
+}
+.empower.container_grid .section_container .top ul li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #d9027d;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  border-radius: 50px;
+}
+.empower.container_grid .section_container .form-option {
+  padding: 100px 0;
+}
+.empower.container_grid .section_container .form-option .title {
+  font-size: 22px;
+}
+.empower.container_grid .section_questions {
+  padding: 50px;
+  display: flex;
+}
+.empower.container_grid .section_questions .left_side {
+  width: 75%;
+  padding: 50px;
+  box-shadow: 0px 10px 14px 10px rgba(0, 0, 0, 0.1019607843);
+  border-radius: 20px;
+  background: white;
+}
+.empower.container_grid .section_questions .left_side h4 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  color: black;
+}
+.empower.container_grid .section_questions .left_side p {
+  font-size: 18px;
+  text-align: center;
+  color: black;
+  padding-top: 18px;
+}
+.empower.container_grid .section_questions .left_side form .form-option {
+  padding: 60px 0;
+  border-bottom: 2px solid #c1c1c1;
+}
+.empower.container_grid .section_questions .left_side form .form-option .title {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  padding-left: 15px;
+  color: black;
+}
+.empower.container_grid .section_questions .left_side form .form-option .title.ar {
+  font-family: "Cairo", sans-serif;
+  direction: rtl;
+  padding-top: 12px;
+  padding-left: 0px;
+  padding-right: 15px;
+  font-weight: 600;
+}
+.empower.container_grid .section_questions .left_side form .form-option .title.ar::before {
+  left: auto;
+  right: 0;
+  top: 20px;
+}
+.empower.container_grid .section_questions .left_side form .form-option .title::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50px;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option {
+  display: flex;
+  padding-top: 50px;
+  margin: 0 -15px;
+  justify-content: center;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option .form-radio-option {
+  width: 33.3333333333%;
+  padding: 0 15px;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option .form-radio-option input {
+  display: none;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option .form-radio-option input:checked ~ .answer {
+  border: 3px solid #d9027d;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option .form-radio-option input:checked ~ .answer::before {
+  opacity: 1;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option .form-radio-option input:checked ~ .answer .icon_check {
+  opacity: 1;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option .form-radio-option .answer {
+  border: 3px solid #f0c5db;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option .form-radio-option .answer:hover {
+  border: 3px solid #d9027d;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option .form-radio-option .answer:hover::before {
+  opacity: 1;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option .form-radio-option .answer:hover .icon_check {
+  opacity: 1;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option .form-radio-option .answer::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #d9027d;
+  border-radius: 50px;
+  font-size: 16px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option .form-radio-option .answer .icon_check {
+  width: 18px;
+  height: 18px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  right: -11px;
+  top: -6px;
+  margin: auto;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option .form-radio-option .answer img {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 25px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option.first {
+  align-items: flex-start;
+  row-gap: 15px;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option.first .form-radio-option {
+  display: flex;
+  align-items: center;
+  width: 9.0909090909%;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option.first .form-radio-option input {
+  display: none;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option.first .form-radio-option input:checked ~ label {
+  border: 3px solid #d9027d;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option.first .form-radio-option input:checked ~ label::before {
+  opacity: 1;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option.first .form-radio-option input:checked ~ label .icon_check {
+  opacity: 1;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option.first .form-radio-option label {
+  border: 3px solid #f0c5db;
+  position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option.first .form-radio-option label:hover {
+  border: 3px solid #d9027d;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option.first .form-radio-option label:hover::before {
+  opacity: 1;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option.first .form-radio-option label:hover .icon_check {
+  opacity: 1;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option.first .form-radio-option label::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #d9027d;
+  border-radius: 50px;
+  font-size: 16px;
+  position: absolute;
+  right: -10px;
+  top: -8px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.empower.container_grid .section_questions .left_side form .form-option .all_option.first .form-radio-option label .icon_check {
+  width: 18px;
+  height: 18px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  right: -9px;
+  top: -6px;
+  margin: auto;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.empower.container_grid .section_questions .left_side form .form-option.text_area {
+  border-bottom: 0;
+}
+.empower.container_grid .section_questions .left_side form .form-option.text_area p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  padding-bottom: 10px;
+  color: white;
+}
+.empower.container_grid .section_questions .left_side form .form-option.text_area textarea {
+  background: #ffffff;
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  width: 100%;
+  resize: none;
+  height: 200px;
+}
+.empower.container_grid .section_questions .left_side form .form-option.button {
+  border-bottom: 0;
+  padding: 0;
+}
+.empower.container_grid .section_questions .left_side form .form-option.button input {
+  width: 280px;
+  margin: 25px 0 0 auto;
+  padding: 18px 20px;
+  text-align: center;
+  color: #d9027d;
+  font-size: 18px;
+  font-weight: 700;
+  border: 2px solid #d9027d;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.empower.container_grid .section_questions .left_side form .form-option.button input:hover {
+  background: #d9027d;
+  color: white;
+}
+.empower.container_grid .section_questions .box_info {
+  width: 25%;
+  padding-left: 20px;
+  position: absolute;
+  right: 20px;
+}
+.empower.container_grid .section_questions .box_info.sticky-fixed {
+  top: 20px;
+  position: fixed;
+}
+.empower.container_grid .section_questions .box_info ul {
+  background: #8e0050;
+  border-radius: 20px;
+  padding: 25px;
+}
+.empower.container_grid .section_questions .box_info ul li {
+  display: flex;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid white;
+}
+.empower.container_grid .section_questions .box_info ul li img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.empower.container_grid .section_questions .box_info ul li .text .title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: white;
+  letter-spacing: 1.3px;
+}
+.empower.container_grid .section_questions .box_info ul li .text .title span {
+  font-weight: 600;
+}
+.empower.container_grid .section_questions .box_info ul li .text .title.ar {
+  font-family: "Cairo", sans-serif;
+  letter-spacing: 1;
+}
+.empower.container_grid .section_questions .box_info ul li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.sec_form {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 0px 10px 14px 10px rgba(0, 0, 0, 0.1019607843);
+  background: white;
+  border-radius: 20px;
+}
+.sec_form h2 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #d9027d;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(217, 2, 125, 0.1215686275);
+}
+.sec_form form {
+  max-width: 380px;
+  margin: 0 auto;
+}
+.sec_form form .msg_error {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 700;
+  width: 100%;
+  color: red;
+  border-radius: 8px;
+  padding: 10px 15px;
+  background: rgba(255, 0, 0, 0.0901960784);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.sec_form form .s_input {
+  padding-bottom: 25px;
+}
+.sec_form form .s_input label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  padding-bottom: 6px;
+}
+.sec_form form .s_input input {
+  background-color: #ffffff;
+  border: 1px solid rgba(217, 2, 125, 0.2784313725);
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.sec_form form .s_input input:focus {
+  border: 1px solid #d9027d;
+}
+.sec_form form button {
+  width: 250px;
+  margin: 10px auto 0;
+  padding: 14px 20px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  background: #d9027d;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.sec_form form button:hover {
+  background: #cd0176;
+}
+.sec_form .creat {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 16px;
+  color: black;
+  transition: all 0.3s ease;
+}
+.sec_form .creat:hover {
+  text-decoration: underline;
+}
+
+.hiring_request.main_container .section_content {
+  display: flex;
+  column-gap: 20px;
+  padding: 40px 0;
+  justify-content: flex-end;
+  position: relative;
+}
+.hiring_request.main_container .section_content .menu_nav {
+  width: 22%;
+}
+.hiring_request.main_container .section_content .menu_nav .menu_box {
+  background: white;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  position: absolute;
+  height: fit-content;
+  border-radius: 6px;
+}
+.hiring_request.main_container .section_content .menu_nav .menu_box.sticky-fixed {
+  top: 20px;
+  position: fixed;
+}
+.hiring_request.main_container .section_content .menu_nav .menu_box .home_link {
+  font-size: 28px;
+  font-weight: 600;
+  border-bottom: 3px solid #d9027d;
+  padding-bottom: 8px;
+  letter-spacing: 1px;
+  color: #d9027d;
+  display: block;
+}
+.hiring_request.main_container .section_content .menu_nav .menu_box .ulside {
+  padding: 15px 0 0;
+}
+.hiring_request.main_container .section_content .menu_nav .menu_box .ulside .s_slide {
+  padding-bottom: 5px;
+}
+.hiring_request.main_container .section_content .menu_nav .menu_box .ulside .s_slide .s_link {
+  display: block;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.hiring_request.main_container .section_content .menu_nav .menu_box .ulside .s_slide .s_link .icon {
+  width: 25px;
+  height: 25px;
+  transition: all 0.3s ease;
+}
+.hiring_request.main_container .section_content .menu_nav .menu_box .ulside .s_slide .s_link .item {
+  font-size: 16px;
+  font-weight: 800;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+.hiring_request.main_container .section_content .menu_nav .menu_box .ulside .s_slide .s_link:hover {
+  background: #027DD9;
+}
+.hiring_request.main_container .section_content .menu_nav .menu_box .ulside .s_slide .s_link:hover .item {
+  color: white;
+}
+.hiring_request.main_container .section_content .menu_nav .menu_box .ulside .s_slide .s_link.active {
+  background: #027DD9;
+}
+.hiring_request.main_container .section_content .menu_nav .menu_box .ulside .s_slide .s_link.active .item {
+  color: white;
+}
+.hiring_request.main_container .section_content .section_request {
+  width: 75%;
+  background: white;
+  padding: 30px;
+  border-radius: 6px;
+}
+.hiring_request.main_container .section_content .section_request .all .single {
+  padding-bottom: 15px;
+}
+.hiring_request.main_container .section_content .section_request .all .single:last-child {
+  padding-bottom: 0;
+}
+.hiring_request.main_container .section_content .section_request .all .single .box {
+  display: flex;
+  border: 2px solid #cbcbcb;
+  border-radius: 4px;
+  padding: 12px;
+  cursor: pointer;
+}
+.hiring_request.main_container .section_content .section_request .all .single .box.rejected {
+  border: 2px solid red;
+}
+.hiring_request.main_container .section_content .section_request .all .single .box.approved {
+  border: 2px solid green;
+}
+.hiring_request.main_container .section_content .section_request .all .single .box .s_col {
+  width: 30%;
+  padding-right: 25px;
+}
+.hiring_request.main_container .section_content .section_request .all .single .box .s_col .title {
+  font-size: 14px;
+  font-weight: 700;
+}
+.hiring_request.main_container .section_content .section_request .all .single .box .s_col .info {
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 5px;
+  line-height: 20px;
+}
+.hiring_request.main_container .section_content .section_request .all .single .box .s_col:last-child {
+  width: 10%;
+  padding-right: 0;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  overflow: auto;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  background: white;
+  transform: translate(100%, 0);
+  transition: 0.3s all ease-in-out;
+  width: 410px;
+  padding: 0;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request.active {
+  pointer-events: auto;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #d9027d;
+  padding: 20px;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .top .s_col .title {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .top .s_col .info {
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 10px;
+  line-height: 20px;
+  color: white;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .top button img {
+  width: 14px;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content {
+  padding: 0 20px;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .s_col {
+  padding: 12px 0;
+  border-bottom: 1px solid #dbdbdb;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .s_col .title {
+  font-size: 12px;
+  font-weight: 700;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .s_col .info {
+  font-size: 12px;
+  font-weight: 500;
+  padding-top: 5px;
+  line-height: 20px;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .s_col:last-child {
+  border-bottom: 0;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .s_col textarea {
+  background: white;
+  border: 2px solid #d3d3d3;
+  border-radius: 4px;
+  margin-top: 5px;
+  padding: 10px 15px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+  width: 100%;
+  resize: none;
+  height: auto;
+  letter-spacing: 1px;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .section_actions {
+  padding-bottom: 20px;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .section_actions .section_buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .section_actions .section_buttons .btn {
+  width: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .section_actions .section_buttons .btn.rejected {
+  border: 2px solid red;
+  color: red;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .section_actions .section_buttons .btn.rejected:hover {
+  background: red;
+  color: white;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .section_actions .section_buttons .btn.approved {
+  border: 2px solid green;
+  color: green;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .section_actions .section_buttons .btn.approved:hover {
+  background: green;
+  color: white;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .section_actions .section_buttons .btn.close {
+  border: 2px solid red;
+  color: red;
+  width: 100% !important;
+}
+.hiring_request.main_container .section_content .section_request .all .single .popup_request .request .form-content .section_actions .section_buttons .btn.close:hover {
+  background: red;
+  color: white;
+}
+.hiring_request.main_container .section_content .section_request .all form .form-group {
+  padding: 10px 0;
+}
+.hiring_request.main_container .section_content .section_request .all form .form-group label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #027DD9;
+  padding-bottom: 6px;
+}
+.hiring_request.main_container .section_content .section_request .all form .form-group input {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2784313725);
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.hiring_request.main_container .section_content .section_request .all form .form-group input:focus {
+  border: 1px solid #027DD9;
+}
+.hiring_request.main_container .section_content .section_request .all form .form-group #id_job_type label, .hiring_request.main_container .section_content .section_request .all form .form-group #id_reason_for label, .hiring_request.main_container .section_content .section_request .all form .form-group #id_gender label, .hiring_request.main_container .section_content .section_request .all form .form-group #id_career_level label, .hiring_request.main_container .section_content .section_request .all form .form-group #id_edu_level label, .hiring_request.main_container .section_content .section_request .all form .form-group #id_eng_level label, .hiring_request.main_container .section_content .section_request .all form .form-group #id_microsoft_level label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 8px;
+  column-gap: 5px;
+  color: black;
+  cursor: pointer;
+}
+.hiring_request.main_container .section_content .section_request .all form .form-group #id_job_type label::before, .hiring_request.main_container .section_content .section_request .all form .form-group #id_reason_for label::before, .hiring_request.main_container .section_content .section_request .all form .form-group #id_gender label::before, .hiring_request.main_container .section_content .section_request .all form .form-group #id_career_level label::before, .hiring_request.main_container .section_content .section_request .all form .form-group #id_edu_level label::before, .hiring_request.main_container .section_content .section_request .all form .form-group #id_eng_level label::before, .hiring_request.main_container .section_content .section_request .all form .form-group #id_microsoft_level label::before {
+  content: "";
+  background-image: url("../images/radio-button.png");
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+}
+.hiring_request.main_container .section_content .section_request .all form .form-group #id_job_type label input, .hiring_request.main_container .section_content .section_request .all form .form-group #id_reason_for label input, .hiring_request.main_container .section_content .section_request .all form .form-group #id_gender label input, .hiring_request.main_container .section_content .section_request .all form .form-group #id_career_level label input, .hiring_request.main_container .section_content .section_request .all form .form-group #id_edu_level label input, .hiring_request.main_container .section_content .section_request .all form .form-group #id_eng_level label input, .hiring_request.main_container .section_content .section_request .all form .form-group #id_microsoft_level label input {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.hiring_request.main_container .section_content .section_request .all form .form-group #id_job_type label:has(input:checked), .hiring_request.main_container .section_content .section_request .all form .form-group #id_reason_for label:has(input:checked), .hiring_request.main_container .section_content .section_request .all form .form-group #id_gender label:has(input:checked), .hiring_request.main_container .section_content .section_request .all form .form-group #id_career_level label:has(input:checked), .hiring_request.main_container .section_content .section_request .all form .form-group #id_edu_level label:has(input:checked), .hiring_request.main_container .section_content .section_request .all form .form-group #id_eng_level label:has(input:checked), .hiring_request.main_container .section_content .section_request .all form .form-group #id_microsoft_level label:has(input:checked) {
+  font-weight: 600;
+}
+.hiring_request.main_container .section_content .section_request .all form .form-group #id_job_type label:has(input:checked)::before, .hiring_request.main_container .section_content .section_request .all form .form-group #id_reason_for label:has(input:checked)::before, .hiring_request.main_container .section_content .section_request .all form .form-group #id_gender label:has(input:checked)::before, .hiring_request.main_container .section_content .section_request .all form .form-group #id_career_level label:has(input:checked)::before, .hiring_request.main_container .section_content .section_request .all form .form-group #id_edu_level label:has(input:checked)::before, .hiring_request.main_container .section_content .section_request .all form .form-group #id_eng_level label:has(input:checked)::before, .hiring_request.main_container .section_content .section_request .all form .form-group #id_microsoft_level label:has(input:checked)::before {
+  content: "";
+  background-image: url("../images/radio.png");
+}
+.hiring_request.main_container .section_content .section_request .all form .btn-success {
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 12px;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-weight: 600;
+  background: green;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.hiring_request.main_container .section_content .section_request .all form .btn-success:hover {
+  background: #017001;
+}
+.hiring_request.main_container .section_content .section_request .sec_message {
+  height: 200px;
+  position: relative;
+}
+.hiring_request.main_container .section_content .section_request .sec_message .sec_text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
+}
+.hiring_request.main_container .section_content .section_request .sec_message .sec_text:hover .text {
+  text-decoration: underline;
+  color: #027DD9;
+}
+.hiring_request.main_container .section_content .section_request .sec_message .sec_text img {
+  width: 30px;
+}
+.hiring_request.main_container .section_content .section_request .sec_message .sec_text .text {
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+}
+.hiring_request.main_container .section_content .section_request .sec_message .s_text {
+  position: absolute;
+  top: -30px;
+  bottom: 0;
+  margin: auto;
+  height: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=main.css.map */

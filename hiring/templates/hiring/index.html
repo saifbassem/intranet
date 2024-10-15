@@ -1,0 +1,165 @@
+{% extends 'hiring/base_hiring.html' %}
+{% load static %}
+
+      {% block page_child_content %}
+             <div class="section_request">
+                 {% if forms %}
+                        <div class="all">
+                            {%for form in forms %}
+                                <div class="single">
+                                        {% if form.status == 0 %}
+                                    <div class="box">
+                                        {% elif form.status == 2 %}
+                                    <div class="box rejected">
+                                        {% elif form.status == 1 %}
+                                    <div class="box approved">  
+                                        {% endif %}
+                                        <div class="s_col">
+                                            <h5 class="title">Hiring Position</h5>
+                                            <h5 class="info">{{form.hiring_position}}</h5>
+                                        </div>
+                                        <div class="s_col">
+                                            <h5 class="title">Created Date</h5>
+                                            <h5 class="info">{{form.created_at}}</h5>
+                                        </div>
+                                        <div class="s_col">
+                                            <h5 class="title">Approved Date</h5>
+                                            <h5 class="info">{{form.approved_at}}</h5>
+                                        </div>
+                                        <div class="s_col">
+                                            <h5 class="title">Created By</h5>
+                                            <h5 class="info">{{form.created_by.full_name}}</h5>
+                                        </div>
+                                        <div class="s_col">
+                                            <h5 class="title">Status</h5>
+                                            <h5 class="info"> {% if form.status == 0 %}
+                                                Pending
+                                            {% elif form.status == 1 %}
+                                                Approved
+                                            {% elif form.status == 2 %}
+                                                Rejected
+                                            {% endif %}</h5>
+                                        </div>
+                                    </div>
+                                    <div class="popup_request">
+                                        <div class="popup__window request">
+                                            <div class="top">
+                                                <div class="s_col">
+                                                    <h5 class="title">Hiring Position</h5>
+                                                    <h5 class="info">{{form.hiring_position}}</h5>
+                                                </div>
+                                                <button type="button" class="popup__close">
+                                                    <img src="{% static './images/close.png' %}" alt="">
+                                                </button>
+                                            </div>
+                                            
+                                            <div class="form-content">
+                                                <div class="s_col">
+                                                    <h5 class="title">Job Type</h5>
+                                                    <h5 class="info">{{form.job_type}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Reporting</h5>
+                                                    <h5 class="info">{{form.reporting_to}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Number Of Vacancies Required</h5>
+                                                    <h5 class="info">{{form.num_of_vac}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Reason For Hiring</h5>
+                                                    <h5 class="info">{{form.reason_for}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Gender Preference</h5>
+                                                    <h5 class="info">{{form.gender}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Career Level</h5>
+                                                    <h5 class="info">{{form.career_level}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Years Of Experience</h5>
+                                                    <h5 class="info">{{form.year_of_ex}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Educational Level</h5>
+                                                    <h5 class="info">{{form.edu_level}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Educational Major</h5>
+                                                    <h5 class="info">{{form.edu_major}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Required Certificates</h5>
+                                                    <h5 class="info">{{form.required_cert}}</h5>
+                                                </div>
+            
+                                                <div class="s_col">
+                                                    <h5 class="title">English Level</h5>
+                                                    <h5 class="info">{{form.eng_level}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Microsoft Office Level</h5>
+                                                    <h5 class="info">{{form.microsoft_level}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Created By</h5>
+                                                    <h5 class="info">{{form.created_by.full_name}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Created Date</h5>
+                                                    <h5 class="info">{{form.created_at}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Approved Date</h5>
+                                                    <h5 class="info">{{form.approved_at}}</h5>
+                                                </div>
+                                                <div class="s_col">
+                                                    <h5 class="title">Status</h5>
+                                                    <h5 class="info">{% if form.status == 0 %}
+                                                        Pending
+                                                    {% elif form.status == 1 %}
+                                                        Approved
+                                                    {% elif form.status == 2 %}
+                                                        Rejected
+                                                    {% endif %}</h5>
+                                                </div>
+                                                {% if form.manager_note %}
+                                                <div class="s_col">
+                                                    <h5 class="title">Manager Note</h5>
+                                                    <h5 class="info">{{form.manager_note}}</h5>
+                                                </div>
+                                                {% endif %}
+                                                {% if form.hr_note %}
+                                                <div class="s_col">
+                                                    <h5 class="title">Hr Note</h5>
+                                                    <h5 class="info">{{form.hr_note}}</h5>
+                                                </div>
+                                                {% endif %}
+                                                {%block button%}
+                                               
+                                                {%endblock%}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {%endfor%}
+
+                        </div>
+                        {%else%}
+                        <div class="sec_message">
+                            <a class="sec_text" href="{%url 'hiring:new_request'%}">
+                                <img src="{% static './images/add_request.png' %}" alt="">
+                                <p class="text">Add Request</p>
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                        </div>
+                    </div>
+                    {% endblock %}
+
+
+     

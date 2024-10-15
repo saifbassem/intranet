@@ -1,0 +1,66 @@
+{% extends 'base_nav.html' %}
+{% load static %}
+
+{% block page_title %}
+    Invoice List
+{% endblock page_title %}
+
+{% block css %}
+<link href="{% static 'table.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'invoicing/invoicing.css' %}">
+{% endblock css %}
+
+{% block page_content %}
+<div class="container">
+    <div class="cover">
+      <form class="login-form" action="{% url 'invoicing:index'%}" method="post" >
+            {% csrf_token %}
+        <div style="display:flex;">
+          <input style="margin:5px;" class="input" type="number" placeholder="Search for an invoice" name="invoice_number" required>
+          <input style="margin:5px;" type="submit" value="Search" id="submit" class="submit">
+        </div>
+          {% for message in messages %}
+
+            <div class="alert alert-danger">
+                   {{ message }}
+            </div>
+
+        {% endfor %}
+
+        </form>
+    <br>
+
+<h3>Latest 20 Invoice</h3>
+
+{% if latest_invoice_list %}
+
+<table>
+        <tr>
+            <th>Invoice Number</th>
+            <th>Total</th>
+            <th>Closed</th>
+        </tr>
+
+        {% for invoice in latest_invoice_list %}
+            <tr>
+                <td><a href="{% url 'invoicing:invoice_details' invoice.id %}">Invoice #{{ invoice.id }}</a></td>
+                <td>{{invoice.total}} USD</td>
+                <td>{{invoice.closed}}</td>
+
+            </tr>
+          {% endfor %}
+
+    </table>
+
+{% else %}
+    <p>No Invoices available.</p>
+{% endif %}
+
+        <div style="display:flex;">
+            <a style="margin:5px;"  href="{% url 'invoicing:create_invoice'%}">New Invoice</a>
+            <br>
+            <a style="margin:5px;" href="{% static 'sample.xlsx' %}" download>Download File Sample</a>
+        </div>
+</div>
+</div>
+{% endblock page_content %}

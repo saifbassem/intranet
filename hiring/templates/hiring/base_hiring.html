@@ -1,0 +1,63 @@
+{% extends 'base_nav.html' %}
+{% load static %}
+
+{% block page_title %}Hiring Request{% endblock page_title %}
+
+{% block css %}
+{% endblock css %}
+
+{% block page_content %}
+
+ <div class="hiring_request main_container">
+            <div class="grid">
+                <div class="section_content">
+                    <nav class="menu_nav">
+                        <div class="menu_box sticky">
+                            <p class="home_link">
+                                Hiring Request
+                            </p>
+
+                            <ul class="ulside">
+
+                                 <li class="s_slide">
+                                    <a class="s_link {% if request.path == '/hiring_requests/' %} active {%endif%}" href="{%url 'hiring:index'%}">
+                                        <span class="item">Opened Request</span>
+                                    </a>
+                                </li>
+
+                                <li class="s_slide">
+                                    <a class="s_link {% if request.path == '/hiring_requests/new_request/' %} active {%endif%}" href="{%url 'hiring:new_request'%}">
+                                        <span class="item">New Request</span>
+                                    </a>
+                                </li>
+                                <li class="s_slide">
+                                    <a class="s_link {% if request.path == '/hiring_requests/request_approval/' %} active {%endif%}" href="{%url 'hiring:request_approval'%}">
+                                        <span class="item">Approvals</span>
+                                    </a>
+                                </li>
+
+                                {% if request.user.is_hr %}
+                                <li class="s_slide">
+                                    <a class="s_link {% if request.path == '/hiring_requests/hr_screen/' %} active {%endif%}" href="{%url 'hiring:hr_screen'%}">
+                                        <span class="item">HR</span>
+                                    </a>
+                                {% endif %}
+
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    {% block page_child_content %}
+                    {% endblock page_child_content %}
+                </div>
+            </div>
+ </div>
+
+
+        </div>
+{% endblock %}
+
+
+        
+       

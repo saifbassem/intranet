@@ -1,0 +1,5 @@
+# Command to create docker image from docker file
+docker build --tag carina-intranet:0.1 .
+
+# Command to run a container from an image
+docker run --publish 8000:8000 --name intranet-container carina-intranet:0.1

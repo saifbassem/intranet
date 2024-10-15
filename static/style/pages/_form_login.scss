@@ -1,0 +1,87 @@
+.sec_form {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    box-shadow: 0px 10px 14px 10px rgba(0, 0, 0, 0.1019607843);
+    background: white;
+    border-radius: 20px;
+    h2{
+        text-align: center;
+        font-size: 22px;
+        font-weight: 700;
+        color: #d9027d;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #d9027d1f;
+    }
+    form{
+        max-width: 380px;
+        margin: 0 auto;
+        .msg_error{
+            font-size: 13px;
+            line-height: 20px;
+            font-weight: 700;
+            width: 100%;
+            color: red;
+            border-radius: 8px;
+            padding: 10px 15px;
+            background: #ff000017;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .s_input{
+            padding-bottom: 25px;
+            label {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 19px;
+                color: #000000;
+                padding-bottom: 6px;
+            }
+            input {
+               background-color: #ffffff;
+               border: 1px solid #d9027d47;
+               border-radius: 5px;
+               padding: 10px 15px;
+               font-style: normal;
+               font-weight: 600;
+               font-size: 16px;
+               line-height: 22px;
+               color: #000000;
+               width: 100%;
+               transition: all 0.3s ease;
+               &:focus{
+                   border: 1px solid #d9027d;
+               }
+            }
+        }
+        button{
+            width: 250px;
+            margin: 10px auto 0;
+            padding: 14px 20px;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            background: #d9027d;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            &:hover {
+               background: #cd0176;
+            }
+        }
+    }
+    .creat{
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-top: 15px;
+        font-size: 16px;
+        color: black;
+        transition: all 0.3s ease;
+        &:hover{
+            text-decoration: underline;
+        }   
+    }
+}

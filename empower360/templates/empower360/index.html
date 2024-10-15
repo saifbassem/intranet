@@ -1,0 +1,60 @@
+{% extends 'base_nav.html' %}
+{% load static %}
+
+{% block page_title %}
+    Questionnaire List
+{% endblock page_title %}
+
+{% block css %}
+<!-- <link rel="stylesheet" href="{% static 'empower360/questionnaire.css' %}"> -->
+{% endblock css %}
+
+{% block page_content %}
+
+
+<div class=" empower container_grid">
+      <div class="section_container">
+          <div class="top">
+
+              <h3>Welcome {{user.full_name}}</h3>
+               <!-- <a href="{% url 'custom_logout' %}" class="logout">Logout</a> -->
+               {% if questionnaire_list %}
+                 <h5>Please complete the following questionnaire(s)</h5>
+               <ul>
+                {% for questionnaire in questionnaire_list %}
+                    <li><a href="{% url 'empower360:questionnaire' questionnaire.id %}">
+                         <p class="name">{{ questionnaire.emp_targeted.emp_name }}
+                            <span>{% if questionnaire.connection != 'Peers' %} ({{ questionnaire.connection }}) {% endif %}</span>
+                             <!-- due by (<span>{# questionnaire.due_date #}</span>) -->
+                      </p>
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+
+               {% else %}
+                <p>No Questionnaire available.</p>
+              {% endif %}
+
+              <br>
+              {% if outdated_questionnaires %}
+                 <h5>Outdated Questionnaire(s)</h5>
+               <ul>
+                {% for questionnaire in outdated_questionnaires %}
+                    <li><p class="name">{{ questionnaire.emp_targeted.emp_name }}
+                        due by (<span>{{ questionnaire.due_date }}</span>)
+                      </p>
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+
+              {% else %}
+                <p>No Outdated Questionnaire available.</p>
+              {% endif %}
+
+
+          </div>
+      </div>
+  </div>
+{% endblock page_content %}

@@ -1,0 +1,79 @@
+{% extends 'hiring/base_hiring.html' %}
+{% load static %}
+
+
+{% block page_child_content %}
+           <div class="section_request">
+            <div class="all">
+                <form action="{% url 'hiring:new_request'%}" method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.hiring_position.label_tag }}
+                        {{ form.hiring_position }}
+                    </div>
+        
+                    <div class="form-group">
+                        {{ form.job_type.label_tag }}
+                        {{ form.job_type }}
+                    </div>
+        
+                    <div class="form-group">
+                        {{ form.reporting_to.label_tag }}
+                        {{ form.reporting_to }}
+                    </div>
+        
+                    <div class="form-group">
+                        {{ form.num_of_vac.label_tag }}
+                        {{ form.num_of_vac }}
+                    </div>
+        
+                    <div class="form-group">
+                        {{ form.reason_for.label_tag }}
+                        {{ form.reason_for }}
+                    </div>
+        
+                    <div class="form-group">
+                        {{ form.gender.label_tag }}
+                        {{ form.gender }}
+                    </div>
+        
+                    <div class="form-group">
+                        {{ form.career_level.label_tag }}
+                        {{ form.career_level }}
+                    </div>
+        
+                    <div class="form-group">
+                        {{ form.year_of_ex.label_tag }}
+                        {{ form.year_of_ex }}
+                    </div>
+        
+                    <div class="form-group">
+                        {{ form.edu_level.label_tag }}
+                        {{ form.edu_level }}
+                    </div>
+        
+                    <div class="form-group">
+                        {{ form.edu_major.label_tag }}
+                        {{ form.edu_major }}
+                    </div>
+        
+                    <div class="form-group">
+                        {{ form.required_cert.label_tag }}
+                        {{ form.required_cert }}
+                    </div>
+        
+                    <div class="form-group">
+                        {{ form.eng_level.label_tag }}
+                        {{ form.eng_level }}
+                    </div>
+        
+                    <div class="form-group">
+                        {{ form.microsoft_level.label_tag }}
+                        {{ form.microsoft_level }}
+                    </div>
+                   <button type="submit" class="btn btn-success">Add Request</button>
+                </form>
+                </div>
+            </div>
+           
+            {% endblock %}
